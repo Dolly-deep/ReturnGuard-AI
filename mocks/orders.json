@@ -1,0 +1,15 @@
+{
+  "CMD-1001": {"status": "delivered", "days_since_delivery": 5, "category": "standard"},
+  "CMD-1002": {"status": "delivered", "days_since_delivery": 30, "category": "standard"},
+  "CMD-1003": {"status": "delivered", "days_since_delivery": 31, "category": "standard"},
+  "CMD-1004": {"status": "shipped", "days_since_delivery": null, "category": "standard"},
+  "CMD-1005": {"status": "delivered", "days_since_delivery": 3, "category": "hygiene"},
+  "CMD-1006": {"status": "delivered", "days_since_delivery": 12, "category": "digital"},
+  "CMD-1007": {"status": "delivered", "days_since_delivery": 0, "category": "standard"},
+  "CMD-1008": {"status": "pending", "days_since_delivery": null, "category": "standard"},
+  "CMD-1009": {"status": "delivered", "days_since_delivery": 14, "category": "standard"},
+  "CMD-1010": {"status": "delivered", "days_since_delivery": 40, "category": "hygiene"},
+  "CMD-1011": {"status": "delivered", "days_since_delivery": -1, "category": "standard"},
+  "CMD-1012": {"status": "cancelled", "days_since_delivery": null, "category": "standard"},
+  "CMD-1013": {"status": "delivered", "days_since_delivery": 1, "category": "other"}
+}
