@@ -1,0 +1,68 @@
+{
+  "project": "ReturnGuard AI",
+  "framework": "LangGraph (Python)",
+  "export_type": "topology_and_policy_metadata_not_reimportable",
+  "implementation": "returnguard/workflow.py",
+  "nodes": [
+    {
+      "id": "lookup_order",
+      "type": "python_function"
+    },
+    {
+      "id": "policy_check",
+      "type": "python_function"
+    },
+    {
+      "id": "draft_response",
+      "type": "python_function"
+    },
+    {
+      "id": "compliance_check",
+      "type": "python_function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "__start__",
+      "target": "lookup_order"
+    },
+    {
+      "source": "lookup_order",
+      "target": "policy_check"
+    },
+    {
+      "source": "policy_check",
+      "target": "draft_response"
+    },
+    {
+      "source": "draft_response",
+      "target": "compliance_check"
+    },
+    {
+      "source": "compliance_check",
+      "target": "__end__"
+    }
+  ],
+  "policy": {
+    "return_window_days_inclusive": 30,
+    "eligible_category": "standard",
+    "excluded_categories": [
+      "digital",
+      "hygiene"
+    ],
+    "possible_decisions": [
+      "ELIGIBLE",
+      "NOT_ELIGIBLE",
+      "HUMAN_REVIEW"
+    ]
+  },
+  "mocks": [
+    "mocks/orders.json",
+    "Mock AI writer injected in tests"
+  ],
+  "checks": [
+    "order_id presence",
+    "expected decision wording",
+    "forbidden refund claims"
+  ]
+}
